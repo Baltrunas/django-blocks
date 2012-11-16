@@ -24,7 +24,7 @@ msgstr "Title"
 
 #: models.py:9
 msgid "URL or URL RegEx"
-msgstr "URL"
+msgstr "URL oder regulärer Ausdruck für URL"
 
 #: models.py:10
 msgid "RegEx"
@@ -59,8 +59,8 @@ msgid ""
 "A slug is the part of a URL which identifies a page using human-readable "
 "keywords"
 msgstr ""
-"«Ярлык» — это вариант названия, подходящий для URL. Обычно содержит только "
-"латинские буквы в нижнем регистре, цифры и дефисы."
+"Webserverebene — ist eine art bezeichnung für den URL. Enthält in der Regel nur "
+"Latin Kleinbuchstaben, Zahlen und Bindestriche."
 
 #: models.py:30
 msgid "header"
