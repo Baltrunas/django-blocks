@@ -1,0 +1,11 @@
+{% if block %}
+	{% load render %}
+	{% if block.show_title %}
+		<h3 class='block-title block-{{ block.area }}-title block-{{ block.slug }}-title' id='block-{{ block.id }}-title'>
+			{{ block.title }}
+		</h3>
+	{% endif %}
+	<div class='block block-{{ block.area }} block-{{ block.slug }}' id='block-{{ block.id }}'>
+		{% render block.text %}
+	</div>
+{% endif %}

@@ -31,7 +31,7 @@ class Block(models.Model):
 		('aside', _('aside')),
 		('footer', _('footer')),
 	)
-	place = models.CharField(verbose_name=_('Place'), max_length=20, null=True, blank=True, choices=PLACE_CHOICES)
+	area = models.CharField(verbose_name=_('Area'), max_length=20, null=True, blank=True, choices=PLACE_CHOICES)
 
 	show_title = models.BooleanField(verbose_name=_('Show title'), default=False)
 

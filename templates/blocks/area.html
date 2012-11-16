@@ -1,0 +1,14 @@
+{% load render %}
+
+<div class='area area-{{ area }}'>
+	{% for item in blocks_area %}
+		{% if block.show_title %}
+			<h3 class='block-title block-{{ item.area }}-title block-{{ item.slug }}-title' id='block-{{ item.id }}-title'>
+				{{ item.title }}
+			</h3>
+		{% endif %}
+		<div class='block block-{{ item.area }} block-{{ item.slug }}' id='block-{{ item.id }}'>
+			{% render item.text %}
+		</div>
+	{% endfor %}
+</div>
