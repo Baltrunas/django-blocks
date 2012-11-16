@@ -5,8 +5,8 @@ from blocks.models import URL
 
 
 class BlockAdmin(admin.ModelAdmin):
-	list_display = ['name', 'place', 'order', 'public']
-	search_fields = ['name', 'place', 'order', 'public']
+	list_display = ['title', 'place', 'order', 'public']
+	search_fields = ['title', 'place', 'order', 'public']
 	list_filter = ['place', 'sites', 'urls', 'public']
 	list_editable = ['public', 'order']
 

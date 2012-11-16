@@ -22,7 +22,7 @@ class URL(models.Model):
 
 
 class Block(models.Model):
-	name = models.CharField(verbose_name=_('Name'), max_length=256)
+	title = models.CharField(verbose_name=_('Title'), max_length=256)
 	text = models.TextField(verbose_name=_('Text'), blank=True, null=True)
 	slug = models.SlugField(verbose_name=_('Slug'), max_length=128, help_text=_('A slug is the part of a URL which identifies a page using human-readable keywords'))
 
@@ -31,7 +31,9 @@ class Block(models.Model):
 		('aside', _('aside')),
 		('footer', _('footer')),
 	)
-	place = models.CharField(verbose_name=_('Place'), max_length=20, choices=PLACE_CHOICES)
+	place = models.CharField(verbose_name=_('Place'), max_length=20, null=True, blank=True, choices=PLACE_CHOICES)
+
+	show_title = models.BooleanField(verbose_name=_('Show title'), default=False)
 
 	sites = models.ManyToManyField(Site, related_name='site_bloks', verbose_name=_('Sites'), null=True, blank=True)
 	urls = models.ManyToManyField(URL, related_name='url_bloks', verbose_name=_('URLs'), null=True, blank=True)
@@ -43,7 +45,7 @@ class Block(models.Model):
 	updated_at = models.DateTimeField(verbose_name=_('Updated At'), auto_now=True)
 
 	def __unicode__(self):
-		return self.name
+		return self.title
 
 	class Meta:
 		ordering = ['-created_at']

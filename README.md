@@ -7,16 +7,19 @@ django-blocks
 * ./manage.py syncdb
 
 # Futures
-* Show title
-* Render block
-* Block style?
 * Optimize context_processors
-* Translate & Translations
+* Translations
+* Render block
 * Clear template
-* Template Tag
+* Template Tag for block
+* Template Tag for place
 * Update readme
 
 # Changelog
+## 2012.11.16
+### Add
+* show_title
+
 ## 2012.11.15
 ### Add
 * Start develop
