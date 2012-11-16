@@ -14,8 +14,8 @@ admin.site.register(Block, BlockAdmin)
 
 
 class URLAdmin(admin.ModelAdmin):
-	list_display = ['name', 'url', 'regex', 'created_at', 'updated_at']
-	search_fields = ['name', 'url', 'regex', 'created_at', 'updated_at']
+	list_display = ['title', 'url', 'regex', 'created_at', 'updated_at']
+	search_fields = ['title', 'url', 'regex', 'created_at', 'updated_at']
 	list_filter = ['regex']
 	list_editable = ['regex']
 

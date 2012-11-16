@@ -6,12 +6,11 @@ from django import template
 register = template.Library()
 
 
-@register.simple_tag
-def render(text):
+@register.simple_tag(takes_context=True)
+def render(context, content):
 	try:
-		tpl = Template(text)
-		# context = Context({'message': 'Your message'})
-		context = Context({})
-		return tpl.render(context)
+		tpl = Template(content)
+		content = Context(context)
+		return tpl.render(content)
 	except:
 		return 'Render Error'

@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class URL(models.Model):
-	name = models.CharField(verbose_name=_('Name'), max_length=256)
+	title = models.CharField(verbose_name=_('Title'), max_length=256)
 	url = models.CharField(verbose_name=_('URL or URL RegEx'), max_length=2048)
 	regex = models.BooleanField(verbose_name=_('RegEx'), default=False)
 
@@ -13,7 +13,7 @@ class URL(models.Model):
 	updated_at = models.DateTimeField(verbose_name=_('Updated At'), auto_now=True)
 
 	def __unicode__(self):
-		return self.name
+		return self.title
 
 	class Meta:
 		ordering = ['-created_at']
@@ -23,15 +23,15 @@ class URL(models.Model):
 
 class Block(models.Model):
 	title = models.CharField(verbose_name=_('Title'), max_length=256)
-	text = models.TextField(verbose_name=_('Text'), blank=True, null=True)
-	slug = models.SlugField(verbose_name=_('Slug'), max_length=128, help_text=_('A slug is the part of a URL which identifies a page using human-readable keywords'))
+	content = models.TextField(verbose_name=_('Content'), blank=True, null=True)
+	slug = models.SlugField(verbose_name=_('Slug'), max_length=128, unique=True, help_text=_('A slug is the part of a URL which identifies a page using human-readable keywords'))
 
-	PLACE_CHOICES = (
+	AREA_CHOICES = (
 		('header', _('header')),
 		('aside', _('aside')),
 		('footer', _('footer')),
 	)
-	area = models.CharField(verbose_name=_('Area'), max_length=20, null=True, blank=True, choices=PLACE_CHOICES)
+	area = models.CharField(verbose_name=_('Area'), max_length=20, null=True, blank=True, choices=AREA_CHOICES)
 
 	show_title = models.BooleanField(verbose_name=_('Show title'), default=False)
 

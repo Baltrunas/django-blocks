@@ -1,14 +1,13 @@
-django-blocks
-=============
+# django-blocks
 
-# Required
+## Required
 * https://github.com/glavit/django-seo
 
-# Install
+## Install
 * Add to INSTALLED_APPS 'blocks',
 * ./manage.py syncdb
 
-# How To Use
+## How To Use
 * Show all area blocks
 
 ```html
@@ -23,24 +22,34 @@ django-blocks
 {% blocks_block 'block_slig' %}
 ```
 
-# Futures
-* Translations
-* Update readme
-* Add context to render
+## Futures
+* Model optimization:
+** Block: area -> ???
+** Add variants or make foregin key or just input for AREA_CHOICES
 
-# Changelog
-## 2012.11.16
-### Add
+## I think about
+Mmm... Donation...
+
+## Changelog
+### 2012.11.16
+#### Add
 * show_title
 * Template Tag for block
 * Render block
 * Template Tag for area
 * Clear template
+* Translations
+* Update README.md
+* Add context to render
 
-### Fix
+#### Fix
 * Rename place to area
 * Delete context_processors
+* Model optimization
+** URL: name -> title
+** Block: text -> content
+** PLACE_CHOICES -> AREA_CHOICES
 
-## 2012.11.15
-### Add
+### 2012.11.15
+#### Add
 * Start develop

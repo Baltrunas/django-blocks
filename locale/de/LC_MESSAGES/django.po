@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-16 19:41+0400\n"
+"POT-Creation-Date: 2012-11-16 20:26+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: models.py:8
-msgid "Name"
-msgstr "Name"
+#: models.py:8 models.py:25
+msgid "Title"
+msgstr "Title"
 
 #: models.py:9
 msgid "URL or URL RegEx"
@@ -28,7 +28,7 @@ msgstr "URL"
 
 #: models.py:10
 msgid "RegEx"
-msgstr "Regel"
+msgstr "Regulärer Ausdruck"
 
 #: models.py:12 models.py:44
 msgid "Created At"
@@ -46,23 +46,21 @@ msgstr "URL"
 msgid "URLs"
 msgstr "URLs"
 
-#: models.py:25
-msgid "Title"
-msgstr "Title"
-
 #: models.py:26
-msgid "Text"
-msgstr "Text"
+msgid "Content"
+msgstr "Inhalt"
 
 #: models.py:27
 msgid "Slug"
-msgstr ""
+msgstr "Webserverebene"
 
 #: models.py:27
 msgid ""
 "A slug is the part of a URL which identifies a page using human-readable "
 "keywords"
-msgstr "keywords"
+msgstr ""
+"«Ярлык» — это вариант названия, подходящий для URL. Обычно содержит только "
+"латинские буквы в нижнем регистре, цифры и дефисы."
 
 #: models.py:30
 msgid "header"
@@ -103,3 +101,9 @@ msgstr "Block"
 #: models.py:53
 msgid "Blocks"
 msgstr "Blöcke"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Text"
+#~ msgstr "Text"
