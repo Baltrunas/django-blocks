@@ -27,5 +27,7 @@ def blocks_block(context, slug):
 	except:
 		pass
 
+	context['block'] = block
+
 	tpl = template.loader.get_template('blocks/block.html')
-	return tpl.render(template.Context({'block': block}))
+	return tpl.render(template.Context(context))

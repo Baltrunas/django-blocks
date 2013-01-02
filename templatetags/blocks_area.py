@@ -31,5 +31,8 @@ def blocks_area(context, area):
 	except:
 		pass
 
+	context['area'] = area
+	context['blocks_area'] = blocks_area
+
 	tpl = template.loader.get_template('blocks/area.html')
-	return tpl.render(template.Context({'area': area, 'blocks_area': blocks_area}))
+	return tpl.render(template.Context(context))
