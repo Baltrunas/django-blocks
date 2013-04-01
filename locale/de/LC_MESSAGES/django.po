@@ -76,7 +76,7 @@ msgstr "fußnote"
 
 #: models.py:34
 msgid "Area"
-msgstr ""
+msgstr "Area"
 
 #: models.py:36
 msgid "Show title"
