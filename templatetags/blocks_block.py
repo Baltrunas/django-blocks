@@ -5,7 +5,6 @@ register = template.Library()
 
 # import models
 from blocks.models import Block
-from blocks.models import URL
 # import regex
 import re
 
@@ -14,20 +13,18 @@ import re
 def blocks_block(context, slug):
 	request = context['request']
 
-	block = False
+	context['block'] = False
 
-	try:
-		for url in URL.objects.all():
-			if url.regex:
-				url_re = re.compile(url.url)
+	blocks = Block.objects.filter(public=True, sites__in=[request.site], slug=slug)
+	for block in blocks:
+		for block_url in block.urls.all():
+			if block_url.regex:
+				url_re = re.compile(block_url.url)
 				if url_re.findall(request.url):
-					block = Block.objects.get(public=True, sites=request.site, urls=url, slug=slug)
+					context['block'] = block
 			else:
-				block = Block.objects.get(public=True, sites=request.site, urls__url=request.url, slug=slug)
-	except:
-		pass
-
-	context['block'] = block
+				if block_url.url == request.url:
+					context['block'] = block
 
 	tpl = template.loader.get_template('blocks/block.html')
 	return tpl.render(template.Context(context))

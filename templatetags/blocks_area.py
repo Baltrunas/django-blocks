@@ -21,10 +21,10 @@ def blocks_area(context, area):
 			if url.regex:
 				url_re = re.compile(url.url)
 				if url_re.findall(request.url):
-					regex_urls_blocks = Block.objects.filter(public=True, sites=request.site, urls=url)
+					regex_urls_blocks = Block.objects.filter(public=True, sites=request.site, urls=url, area=area)
 					blocks_area += regex_urls_blocks
 			else:
-				plain_urls_blocks = Block.objects.filter(public=True, sites=request.site, urls__url=request.url)
+				plain_urls_blocks = Block.objects.filter(public=True, sites=request.site, urls__url=request.url, area=area)
 				blocks_area += plain_urls_blocks
 		blocks_area_ids = [block.id for block in list(set(blocks_area))]
 		blocks_area = Block.objects.filter(pk__in=blocks_area_ids).order_by('order')
