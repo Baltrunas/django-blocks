@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*
 from django.contrib import admin
-from blocks.models import Block
-from blocks.models import URL
+from .models import Block
+from .models import URL
 
 
 class BlockAdmin(admin.ModelAdmin):
