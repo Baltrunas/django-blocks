@@ -1,11 +1,10 @@
-# -*- utf-8 -*-
 # import and register template library
 from django import template
 register = template.Library()
 
 # import models
-from blocks.models import Block
-from blocks.models import URL
+from ..models import Block
+from ..models import URL
 # import regex
 import re
 

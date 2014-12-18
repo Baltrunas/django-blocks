@@ -4,7 +4,7 @@ from django import template
 register = template.Library()
 
 # import models
-from blocks.models import Block
+from ..models import Block
 # import regex
 import re
 
