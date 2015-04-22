@@ -23,7 +23,7 @@ class URL(models.Model):
 class Block(models.Model):
 	title = models.CharField(verbose_name=_('Title'), max_length=256)
 	content = models.TextField(verbose_name=_('Content'), blank=True, null=True)
-	slug = models.SlugField(verbose_name=_('Slug'), max_length=128, unique=True, help_text=_('A slug is the part of a URL which identifies a page using human-readable keywords'))
+	slug = models.SlugField(verbose_name=_('Slug'), max_length=128, unique=False, help_text=_('A slug is the part of a URL which identifies a page using human-readable keywords'))
 
 	AREA_CHOICES = (
 		('header', _('header')),
